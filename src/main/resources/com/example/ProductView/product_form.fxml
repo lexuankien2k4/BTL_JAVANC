@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="500" prefWidth="450" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.tx1.Controller.ProductFormController">
+    <VBox alignment="TOP_LEFT" spacing="10" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10">
+        <Label text="Tên sản phẩm:" />
+        <TextField fx:id="nameField" />
+
+        <Label text="Giá:" />
+        <TextField fx:id="priceField" />
+
+        <Label text="URL Hình ảnh:" />
+        <TextField fx:id="imageUrlField" onKeyReleased="#handleImagePreview" />
+
+        <ImageView fx:id="imageView" fitHeight="172.0" fitWidth="246.0" preserveRatio="true" />
+
+        <Label text="Mô tả:" />
+        <TextArea fx:id="descriptionField" prefRowCount="3" />
+
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <Button fx:id="saveButton" onAction="#handleSave" text="Lưu" />
+            <Button fx:id="cancelButton" onAction="#handleCancel" text="Hủy" />
+        </HBox>
+    </VBox>
+</AnchorPane>

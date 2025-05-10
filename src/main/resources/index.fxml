@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tx1.Controller.ShoppingController">
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+            </padding>
+            <children>
+                <Label text="Tìm kiếm:">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="searchField" onAction="#handleSearch" prefWidth="250.0" promptText="Nhập tên sản phẩm..." />
+                <Button fx:id="searchButton" mnemonicParsing="false" onAction="#handleSearch" text="Tìm" />
+                <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Sắp xếp:">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets right="5.0" />
+                            </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="sortComboBox" prefWidth="150.0" promptText="Sắp xếp theo..." />
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fx:id="productsScrollPane" fitToWidth="true" hbarPolicy="NEVER" prefViewportHeight="580.0" prefViewportWidth="698.0" BorderPane.alignment="CENTER">
+            <content>
+                <FlowPane fx:id="productsFlowPane" alignment="TOP_LEFT" hgap="15.0" prefWrapLength="680.0" vgap="15.0">
+                    <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                    </padding>
+                </FlowPane>
+            </content>
+        </ScrollPane>
+    </center>
+    <right>
+        <VBox alignment="TOP_CENTER" prefHeight="580.0" prefWidth="280.0" spacing="10.0" style="-fx-background-color: #f4f4f4; -fx-border-color: #cccccc; -fx-border-width: 0 0 0 1;" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+            <children>
+                <Label text="GIỎ HÀNG">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </Label>
+                <ListView fx:id="cartListView" prefHeight="350.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                <Button fx:id="removeFromCartButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleRemoveFromCart" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" text="Xóa khỏi giỏ">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+                <Label fx:id="totalLabel" text="Tổng tiền: 0 VND">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </Label>
+                <Button fx:id="checkoutButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleCheckout" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Thanh Toán">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </Button>
+            </children>
+        </VBox>
+    </right>
+</BorderPane>
